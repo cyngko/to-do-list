@@ -1,0 +1,191 @@
+:root {
+  --add-color: #39d979;
+  --font-size: 20px;
+  --bg-color: #111;
+  --br: 5px;
+  --text-color: #ddd;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(
+    -45deg,
+    purple,
+    #9a43dd,
+    #0052d4,
+    #4364f7,
+    #6fb1fc,
+    #b479f7,
+    #8e54e9,
+    #e2a0cd,
+    coral
+  );
+  background-size: 300% 300%;
+  -webkit-animation: gradientBG 20s ease infinite;
+  animation: gradientBG 20s ease infinite;
+  height: 100vh;
+  color: var(--text-color);
+}
+.container {
+  width: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--bg-color);
+  border-radius: 25px;
+  height: 80vh;
+  overflow-y: scroll;
+}
+.title {
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+.app-body {
+  max-width: 650px;
+  margin: 0 auto;
+}
+.task-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #333;
+}
+.input-box {
+  width: 80%;
+  position: relative;
+}
+.add-button {
+  display: inline-block;
+  font-size: var(--font-size);
+  text-align: center;
+  background-color: var(--add-color);
+  height: 2rem;
+  width: 2rem;
+  padding: 5px;
+  border-radius: var(--br);
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+#task-input {
+  font-size: var(--font-size);
+  padding: 1rem;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-radius: var(--br);
+  background-color: #222;
+  color: var(--text-color);
+}
+#task-selection {
+  font-size: var(--font-size);
+  padding: 5px;
+  outline: none;
+  cursor: pointer;
+  color: var(--text-color);
+  background-color: #222;
+  border: none;
+  border-radius: var(--br);
+}
+.task-list {
+  font-size: var(--font-size);
+}
+.task-list li {
+  list-style: none;
+  height: 100px;
+  padding: 25px 0;
+  border-bottom: 1px solid #333;
+}
+.task-list li:hover {
+  background-color: #222;
+}
+.checkbox-wrapper {
+  position: relative;
+  margin: 0.5em 1em;
+}
+.checkbox-wrapper svg {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  right: 0.5em;
+  top: 0.3em;
+  border: 2px solid #eee;
+  pointer-events: none;
+}
+label {
+  display: block;
+  padding: 0.25em 0.5em 0.25em 0;
+  position: relative;
+  cursor: pointer;
+}
+input[type='checkbox'] {
+  opacity: 0;
+  width: 2em;
+  height: 2em;
+  position: absolute;
+  right: 0.5em;
+  top: 0.3em;
+}
+svg path {
+  transition: stroke-dashoffset 0.4s linear;
+}
+
+input[type='checkbox']:checked ~ svg {
+  border-color: #fff;
+}
+
+input[type='checkbox']:checked ~ svg path {
+  stroke-dashoffset: 0;
+  stroke: currentColor;
+}
+
+input[type='checkbox'] ~ svg path {
+  stroke: #eee;
+}
+
+input[type='checkbox']:checked ~ label {
+  color: #666;
+  text-decoration: line-through;
+}
+
+input[type='checkbox']:focus ~ svg {
+  outline: 3px solid var(--add-color);
+  outline-offset: 5px;
+}
+
+@-webkit-keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hide {
+  display: none;
+}
