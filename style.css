@@ -107,7 +107,7 @@ body {
   border-bottom: 1px solid #333;
 }
 .task-list li:hover {
-  background-color: #222;
+  background-color: rgb(26, 26, 26);
 }
 .checkbox-wrapper {
   position: relative;
