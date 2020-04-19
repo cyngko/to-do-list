@@ -215,3 +215,11 @@ input[type='checkbox']:focus ~ svg {
 .hide {
   display: none;
 }
+
+/* Mobile Optimization */
+
+@media all and (max-width: 480px) {
+  .title {
+    font-size: 24px;
+  }
+}
