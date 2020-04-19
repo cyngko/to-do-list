@@ -87,20 +87,23 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-.taskSelection div {
+.displayOption {
   padding: 1rem;
   text-align: center;
   flex-basis: 50%;
   background-color: rgba(256, 256, 256, 0.1);
-}
-#all {
-  border-radius: 5px 0 0 5px;
+  transition: 400ms ease background-color;
 }
 #due {
+  border-radius: 5px 0 0 5px;
+  text-decoration: underline;
+}
+#all {
   border-radius: 0 5px 5px 0;
 }
 .taskSelection div:hover {
   background-color: var(--bg-secondary);
+  cursor: pointer;
 }
 #task-input {
   font-size: var(--font-size);
@@ -137,8 +140,8 @@ body {
 }
 .checkbox-wrapper svg {
   border-radius: 5px;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   position: absolute;
   right: 0.5em;
   top: 0.3em;
@@ -153,8 +156,8 @@ label {
 }
 input[type='checkbox'] {
   opacity: 0;
-  width: 2em;
-  height: 2em;
+  width: 1.5em;
+  height: 1.5em;
   position: absolute;
   right: 0.5em;
   top: 0.3em;

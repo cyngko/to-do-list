@@ -1,4 +1,5 @@
 var task = document.querySelector('#task-input');
+
 let createNewTask = () => {
   let taskList = document.querySelector('.task-list');
   let newTask = document.createElement('li');
@@ -19,18 +20,11 @@ let createNewTask = () => {
     <label for=${taskId}>${task.value}</label>
   </div>`;
   taskList.appendChild(newTask);
-  let checkbox = document.querySelector(`#${taskId}`);
-  checkbox.addEventListener('click', () => {
-    setTimeout(() => {
-      if (checkbox.checked == 1) {
-        newTask.classList.add('hide', 'done');
-        newTask.classList.remove('dueTask');
-      }
-    }, 500);
-  });
+  removeDoneTask();
   task.value = '';
 };
 
+// EventListener - neue Aufgabe erstellen
 task.addEventListener('keydown', (e) => {
   if (e.key == 'Enter') {
     createNewTask();
@@ -50,3 +44,42 @@ task.addEventListener('keydown', (e) => {
 //   });
 // };
 // showDoneTasks();
+
+let removeDoneTask = () => {
+  let checkbox = document.querySelectorAll('.cb');
+  let taskRow = document.querySelectorAll('li');
+
+  for (let i = 0; i < checkbox.length; i++) {
+    checkbox[i].addEventListener('click', () => {
+      setTimeout(() => {
+        if (checkbox[i].checked) {
+          taskRow[i].classList.add('done', 'hide');
+        } else {
+          if (taskRow[i].classList.contains('done')) {
+            taskRow[i].classList.remove('done');
+          }
+        }
+      }, 500);
+    });
+  }
+};
+
+let due = document.querySelector('#due');
+let all = document.querySelector('#all');
+let doneTask = document.getElementsByClassName('done');
+
+due.addEventListener('click', (e) => {
+  due.style.textDecoration = 'underline';
+  all.style.textDecoration = 'none';
+  for (let task of doneTask) {
+    task.classList.add('hide');
+  }
+});
+
+all.addEventListener('click', (e) => {
+  all.style.textDecoration = 'underline';
+  due.style.textDecoration = 'none';
+  for (let task of doneTask) {
+    task.classList.remove('hide');
+  }
+});
