@@ -38,16 +38,16 @@ task.addEventListener('keydown', (e) => {
   }
 });
 
-let selection = document.querySelector('#task-selection');
-let selectionValue = selection.options[selection.selectedIndex].value;
-let showDoneTasks = () => {
-  selection.addEventListener('change', (e) => {
-    if ((selectionValue = 'all')) {
-      let doneTask = document.querySelectorAll('.done');
-      for (task of doneTask) {
-        task.classList.toggle('hide');
-      }
-    }
-  });
-};
-showDoneTasks();
+// let selection = document.querySelector('#task-selection');
+// let selectionValue = selection.options[selection.selectedIndex].value;
+// let showDoneTasks = () => {
+//   selection.addEventListener('change', (e) => {
+//     if ((selectionValue = 'all')) {
+//       let doneTask = document.querySelectorAll('.done');
+//       for (task of doneTask) {
+//         task.classList.toggle('hide');
+//       }
+//     }
+//   });
+// };
+// showDoneTasks();

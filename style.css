@@ -49,8 +49,8 @@ body {
 .title {
   font-size: 40px;
   text-align: center;
-  margin-top: 5rem;
-  margin-bottom: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 .app-body {
   max-width: 450px;
@@ -58,13 +58,12 @@ body {
 }
 .task-bar {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid var(--bg-secondary);
 }
 .input-box {
-  width: 80%;
+  width: 100%;
+  margin-bottom: 1rem;
   position: relative;
 }
 .add-button {
@@ -74,7 +73,7 @@ body {
   background-color: var(--add-color);
   height: 2rem;
   width: 2rem;
-  padding: 5px;
+  padding: 3px;
   border-radius: var(--br);
   color: #fff;
   position: absolute;
@@ -82,6 +81,42 @@ body {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+}
+.svg-box {
+  padding: 1rem;
+  border-radius: var(--br);
+  background-color: rgba(256, 256, 256, 0.1);
+  transition: 400ms ease background-color;
+}
+.svg-box:hover {
+  background-color: var(--bg-secondary);
+  cursor: pointer;
+}
+.svg-box svg {
+  position: relative;
+  top: 3px;
+}
+.taskSelection {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.taskSelection div {
+  padding: 1rem;
+  text-align: center;
+  flex-basis: 50%;
+  background-color: rgba(256, 256, 256, 0.1);
+}
+#all {
+  border-radius: 5px 0 0 5px;
+}
+#due {
+  border-radius: 0 5px 5px 0;
+}
+.taskSelection div:hover {
+  background-color: var(--bg-secondary);
 }
 #task-input {
   font-size: var(--font-size);
@@ -99,16 +134,6 @@ body {
 }
 #task-input::placeholder {
   color: #444;
-}
-#task-selection {
-  font-size: var(--font-size);
-  padding: 5px;
-  outline: none;
-  cursor: pointer;
-  color: var(--text-color);
-  background-color: rgba(256, 256, 256, 0.1);
-  border: none;
-  border-radius: var(--br);
 }
 .task-list {
   font-size: var(--font-size);
