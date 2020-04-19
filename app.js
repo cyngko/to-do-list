@@ -31,7 +31,6 @@ let createNewTask = () => {
   task.value = '';
 };
 
-document.querySelector('.add-button').addEventListener('click', createNewTask);
 task.addEventListener('keydown', (e) => {
   if (e.key == 'Enter') {
     createNewTask();
