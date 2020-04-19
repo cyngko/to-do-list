@@ -1,17 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+
 :root {
   --add-color: #39d979;
+  --font-family: 'Schoolbell', cursive;
   --font-size: 20px;
-  --bg-color: #111;
+  --bg-color: rgba(256, 256, 256, 0.2);
+  --bg-secondary: rgba(256, 256, 256, 0.3);
   --br: 5px;
-  --text-color: #ddd;
+  --text-color: #222;
 }
 * {
+  font-family: var(--font-family);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-  font-family: 'Roboto', sans-serif;
   background: linear-gradient(
     -45deg,
     purple,
@@ -42,6 +46,7 @@ body {
   overflow-y: scroll;
 }
 .title {
+  font-size: 60px;
   text-align: center;
   margin-top: 5rem;
   margin-bottom: 3rem;
@@ -55,7 +60,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding-bottom: 2rem;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--bg-secondary);
 }
 .input-box {
   width: 80%;
@@ -84,8 +89,15 @@ body {
   outline: none;
   width: 100%;
   border-radius: var(--br);
-  background-color: #222;
+  background-color: rgba(256, 256, 256, 0.1);
   color: var(--text-color);
+  transition: 400ms ease background-color;
+}
+#task-input:focus {
+  background-color: var(--bg-secondary);
+}
+#task-input::placeholder {
+  color: #444;
 }
 #task-selection {
   font-size: var(--font-size);
@@ -93,7 +105,7 @@ body {
   outline: none;
   cursor: pointer;
   color: var(--text-color);
-  background-color: #222;
+  background-color: rgba(256, 256, 256, 0.1);
   border: none;
   border-radius: var(--br);
 }
@@ -104,10 +116,10 @@ body {
   list-style: none;
   height: 100px;
   padding: 25px 0;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--bg-secondary);
 }
 .task-list li:hover {
-  background-color: rgb(26, 26, 26);
+  background-color: rgba(256, 256, 256, 0.1);
 }
 .checkbox-wrapper {
   position: relative;
