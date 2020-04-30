@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Asap+Condensed:400,700&display=swap');
 
 :root {
   --add-color: #39d979;
-  --font-family: 'Schoolbell', cursive;
+  --font-family: 'Asap Condensed', cursive;
   --font-size: 20px;
   --bg-color: rgba(256, 256, 256, 0.2);
   --bg-secondary: rgba(256, 256, 256, 0.3);
